@@ -1,0 +1,177 @@
+name: Bug report
+description: "Report a reproducible problem with Souls Like Bosses: Reforged"
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem!
+
+        Please fill out every relevant field. Detailed reports with logs are much easier to diagnose. Remove passwords, access tokens, e-mail addresses, and other private information before uploading files.
+
+  - type: dropdown
+    id: game_version
+    attributes:
+      label: Minecraft version and mod loader
+      description: Select the exact combination on which the problem occurred.
+      options:
+        - Minecraft 1.20.1 / Forge
+        - Minecraft 1.21.1 / NeoForge
+        - Other or unknown
+    validations:
+      required: true
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Souls Like Bosses version
+      description: This is the version in the downloaded JAR filename.
+      placeholder: "Example: 1.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: loader_version
+    attributes:
+      label: Forge or NeoForge version
+      placeholder: "Example: NeoForge 21.1.250"
+    validations:
+      required: true
+
+  - type: input
+    id: java_version
+    attributes:
+      label: Java version
+      description: If you do not know it, write "unknown". It is also shown near the beginning of latest.log.
+      placeholder: "Example: Java 21.0.8"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Singleplayer
+        - LAN world
+        - Dedicated server
+        - Dedicated server with a separate client
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Problem category
+      options:
+        - Crash or failure to start
+        - Boss behavior or combat
+        - Rendering, model, animation, or shader
+        - Structure or world generation
+        - Weapon, ability, drop, or configuration
+        - Performance or lag
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: affected_content
+    attributes:
+      label: Affected boss, item, structure, or ability
+      placeholder: "Example: Nightlord special attack"
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem as precisely as possible. Include what you saw immediately before and after it occurred.
+      placeholder: Tell us what went wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Start from launching the game or loading the world and list the smallest reliable sequence.
+      placeholder: |
+        1. Launch the game with ...
+        2. Load or create ...
+        3. Spawn or fight ...
+        4. Use ...
+        5. The problem occurs when ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: Describe the result you expected instead.
+    validations:
+      required: true
+
+  - type: input
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      placeholder: "Example: every time, 2 out of 5 attempts, or only once"
+    validations:
+      required: true
+
+  - type: textarea
+    id: crash_report
+    attributes:
+      label: Crash report
+      description: If the game crashed, drag the matching file from the crash-reports folder into this field, or provide a link. Write "No crash" if none was created.
+      placeholder: Drag the crash report here, paste a link, or write "No crash".
+    validations:
+      required: true
+
+  - type: textarea
+    id: latest_log
+    attributes:
+      label: latest.log or server log
+      description: Drag the complete latest.log or relevant server log into this field, or provide a link. Please do not paste only the final error line.
+      placeholder: Drag the complete log here or paste a link.
+    validations:
+      required: true
+
+  - type: textarea
+    id: mods
+    attributes:
+      label: Installed mods
+      description: Attach a mod list, paste the filenames from your mods folder, or link to the exact modpack and version.
+      placeholder: Paste or attach the complete mod list.
+    validations:
+      required: true
+
+  - type: textarea
+    id: visuals
+    attributes:
+      label: Shaders and resource packs
+      description: List the shader pack, resource packs, and rendering mods in use. Write "None" if there are none.
+      placeholder: "Example: Complementary Reimagined, Oculus/Embeddium, Mod Resources"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add screenshots, videos, world seeds, coordinates, configuration files, or anything else that may help.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Final checks
+      options:
+        - label: I searched the existing issues and did not find the same problem.
+          required: true
+        - label: I am using the newest Souls Like Bosses release available for this Minecraft version.
+          required: true
+        - label: I removed private information and secrets from all attached files.
+          required: true
